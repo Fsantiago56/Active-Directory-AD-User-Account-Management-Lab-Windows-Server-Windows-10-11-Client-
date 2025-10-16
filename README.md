@@ -1,26 +1,97 @@
-# 🧰 Active Directory (AD) & User Account Management Lab (Windows Server + Windows 10/11 Client)
+# 🧩 Active Directory (AD) & User Account Management Lab (Windows Server + Windows 10/11 Client)
 
 ## 📖 Description
-Learn how corporate IT environments manage users, groups, and authentication using Active Directory.
+This lab demonstrates how to deploy and manage **Active Directory Domain Services (AD DS)** on **Windows Server 2022** and connect a **Windows 10/11 client** to the domain.  
+The lab simulates a real-world IT environment for learning **centralized authentication**, **user management**, and **domain-based security**.
+
+---
+
+## 🧠 Learning Objectives
+By the end of this lab, you will be able to:
+- Configure a Windows Server as a **Domain Controller**
+- Create and manage **Organizational Units (OUs)** and **user accounts**
+- Join a **Windows client** to a domain
+- Log in and manage accounts through **Active Directory**
+
+---
 
 ## 🖥️ Environments Used
-| Role                      | OS                            | Purpose                              |
-| ------------------------- | ----------------------------- | ------------------------------------ |
-| 🏢 **Domain Controller**  | Windows Server 2022 (or 2019) | Host AD DS, DNS, and user management |
-| 💻 **Client Workstation** | Windows 10 or 11              | Join to domain and test login        |
-| 🧠 **Host OS**            | Windows 11                    | Runs both VMs via VirtualBox         |
 
- ---
+| Component | Configuration |
+|------------|---------------|
+| **Host OS** | Windows 11 |
+| **Virtualization** | VirtualBox |
+| **Server VM** | Windows Server 2022 Standard Evaluation |
+| **Client VM** | Windows 10 / Windows 11 |
+| **Network Type** | VirtualBox Host-Only Ethernet Adapter |
+| **Domain Name** | `company.local` |
 
+---
+
+## 🧩 Network Overview
+
+### 🌐 Network Mode: VirtualBox Host-Only Ethernet Adapter
+VirtualBox automatically creates a **Host-Only network** between your **host PC**, **Windows Server VM**, and **Windows Client VM**.  
+This allows them to communicate **locally** without using your home Wi-Fi or router.
 
 ## 🛠️ Lab Walkthrough
 
-### 🔹 Step 1 – Create Your Virtual Network
+### 🔹 Step 1 – Create Virtual Machines
+**Description:**  
+Set up two VirtualBox VMs to simulate a small network domain environment.
 
-Inside VirtualBox:
+**Goal:**  
+Prepare the foundation for a server–client architecture.
 
-- Go to File → Host Network Manager → Create
+| VM | OS | RAM | CPU | Network |
+|----|----|-----|-----|-------|
+| `DC01` | Windows Server 2022 | 4 GB | 2 | VirtualBox Host-Only Ethernet Adapter |
+| `Client01` | Windows 10/11 | 4 GB | 2 | VirtualBox Host-Only Ethernet Adapter |
 
-- Name it something like ITLabNet
+</details> <details> <summary>📸 Click to view Virtual Machine ScreenShots</summary>
+<p align="center">
+  ✅ <strong>Creation Of Domain Controller VM</strong> ✅  
+  <br>
+  <img src="https://i.imgur.com/mv2SFrD.png" width="60%">
+  </p>
+ <p align="center">
+  ✅ <strong>Creation Of Windows 11 VM</strong> ✅  
+  <br>
+  <img src="https://i.imgur.com/cNFOqGC.png" width="70%">
+  </p>
+</details>
 
-- Assign both VMs to this same internal network.
+---
+
+### 🔹 Step 2 – Install Windows Server 2022
+**Description:**  
+Install Windows Server 2022 (Desktop Experience) on the `DC01` VM.
+
+**Goal:**  
+Deploy a base operating system to later promote into a domain controller.
+
+**Key Actions:**
+- Boot from Server ISO  
+- Click “I don’t have a product key”  
+- Choose **Standard Evaluation (Desktop Experience)**  
+- Set Administrator password  
+
+🖼️ *Screenshot Placeholder:* Server setup screen.
+
+---
+
+### 🔹 Step 3 – Configure Static IP and Rename Server
+**Description:**  
+Give the server a permanent IP address and meaningful hostname.
+
+**Goal:**  
+Ensure reliable communication between server and client in the AD domain.
+
+<details>
+<summary>📌 Show Commands</summary>
+
+```powershell
+Rename-Computer -NewName "DC01" -Restart
+New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 192.168.10.10 -PrefixLength 24
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 127.0.0.1
+
