@@ -63,24 +63,7 @@ Prepare the foundation for a server–client architecture.
 
 ---
 
-### 🔹 Step 2 – Install Windows Server 2022
-**Description:**  
-Install Windows Server 2022 (Desktop Experience) on the `DC01` VM.
-
-**Goal:**  
-Deploy a base operating system to later promote into a domain controller.
-
-**Key Actions:**
-- Boot from Server ISO  
-- Click “I don’t have a product key”  
-- Choose **Standard Evaluation (Desktop Experience)**  
-- Set Administrator password  
-
-🖼️ *Screenshot Placeholder:* Server setup screen.
-
----
-
-### 🔹 Step 3 – Configure Static IP and Rename Server
+### 🔹 Step 4 – Configure Static IP and Rename Server
 **Description:**  
 Give the server a permanent IP address and meaningful hostname.
 
@@ -94,4 +77,14 @@ Ensure reliable communication between server and client in the AD domain.
 Rename-Computer -NewName "DC01" -Restart
 New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 192.168.10.10 -PrefixLength 24
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 127.0.0.1
+```
+</details>
 
+</details> <details> <summary>📸 Click to view  ScreenShots</summary>
+<p align="center">
+  ✅ <strong>Creation Of Domain Controller VM</strong> ✅  
+  <br>
+  <img src="https://i.imgur.com/mv2SFrD.png" width="60%">
+  </p>
+
+</details>
