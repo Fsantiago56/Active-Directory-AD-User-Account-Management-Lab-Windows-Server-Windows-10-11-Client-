@@ -304,3 +304,17 @@ Press Enter and wait — the login may take a few moments while Windows creates 
 </details>
 
 
+✅ Final Outcome:
+Both systems communicate on the same isolated network, the client authenticates through the domain, and the environment fully replicates an enterprise-style Active Directory setup.
+
+🧠 Skills Gained:
+
+- Active Directory & Domain Services deployment
+
+- DNS integration & troubleshooting
+
+- User and group management in ADUC
+
+- Windows client domain joining
+
+- Network connectivity troubleshooting in VirtualBox
