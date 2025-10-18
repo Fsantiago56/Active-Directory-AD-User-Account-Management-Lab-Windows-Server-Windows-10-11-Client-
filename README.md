@@ -238,3 +238,39 @@ Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 192.168.5
   </p>
    
 </details>
+
+### 🔹 Step 7 – Join the Client to the Domain
+**Description:**  
+Now you’ll join the client computer to the company.local domain so it can log in using domain credentials.
+
+🎯 Goal:
+
+Enable domain-based logins and centralized policy control.
+
+🪜 Steps:
+
+1. On Client01, Right-click Start → System (or press Windows + Pause/Break)
+2. Click Advanced system settings on the right
+3. Under the Computer Name tab → click Change...
+4. In the “Member of” section → select Domain
+5. Enter:
+   ```
+   company.local
+   ```
+6. When prompted, enter domain credentials:
+   ```
+   Administrator@company.local
+   ```
+7. After success, you’ll get a “Welcome to the company.local domain” message
+8. Restart the computer when prompted.
+
+
+<details> <summary>📸 Click to view  ScreenShot</summary>
+<p align="center">
+  ✅ <strong>Verify Domain join success confirmation screen. </strong> ✅  
+<br>
+<img src="https://i.imgur.com/hbthTZv.png" width="60%">
+</p>
+    
+</details>
+     
