@@ -88,3 +88,37 @@ Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 127.0.0.1
   </p>
 
 </details>
+
+### 🔹 Step 3 – Install Active Directory Domain Services (AD DS)
+**Description:**  
+This step installs the Active Directory Domain Services (AD DS) role on your Windows Server 2022 VM.
+AD DS is what allows your server to manage users, computers, and security policies in a centralized domain.
+
+## 🎯 Goal:
+
+Prepare your Windows Server to act as a Domain Controller (DC).
+
+🪜 Steps:
+
+-  On DC01, log in as Administrator.
+
+-  Open Server Manager (it opens automatically at login, or search for it).
+
+-  Click Manage → Add Roles and Features.
+
+-  Click Next several times until you reach Server Roles.
+
+-  Check the box for Active Directory Domain Services.
+
+-  lick Add Features → Next → Install.
+
+- Wait for the installation to finish — don’t restart yet.
+
+</details> <details> <summary>📸 Click to view  ScreenShot</summary>
+<p align="center">
+  ✅ <strong>Verify Installation</strong> ✅  
+  <br>
+  <img src="https://i.imgur.com/2KL8OcH.png" width="60%">
+  </p>
+
+</details>
