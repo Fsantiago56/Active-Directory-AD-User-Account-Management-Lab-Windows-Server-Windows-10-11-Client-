@@ -202,3 +202,39 @@ Password: P@ssw0rd!
   </p>
    
 </details>
+
+### 🔹 Step 6 – Configure Windows Client (Client01)
+**Description:**  
+Before joining your client VM to the domain, you need to give it a static IP address and make sure its DNS points to your Domain Controller.
+
+🎯 Goal:
+
+Make Client01 communicate directly with DC01 on the same network.
+
+🪜 Steps:
+
+- Log in to Client01 (your Windows 10/11 VM).
+
+- Open PowerShell (as Administrator).
+
+- Type these commands:
+
+```powershell
+Rename-Computer -NewName "Client01" -Restart
+```
+→ After reboot, reopen PowerShell and enter:
+
+```powershell
+New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 192.168.56.20 -PrefixLength 24
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 192.168.56.10
+```
+
+
+<details> <summary>📸 Click to view  ScreenShot</summary>
+<p align="center">
+  ✅ <strong>Verify Client network properties </strong> ✅  
+  <br>
+  <img src="https://i.imgur.com/CRQj6kE.png" width="60%">
+  </p>
+   
+</details>
