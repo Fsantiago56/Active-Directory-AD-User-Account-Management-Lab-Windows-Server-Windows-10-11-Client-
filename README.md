@@ -122,3 +122,36 @@ Prepare your Windows Server to act as a Domain Controller (DC).
   </p>
 
 </details>
+
+### 🔹 Step 4 – Promote Server to Domain Controller
+**Description:**  
+Now that AD DS is installed, you’ll promote your server into a Domain Controller (DC) and create a new domain — the backbone of your Active Directory network.
+
+## 🎯 Goal:
+Create and configure a domain named company.local.
+
+🪜 Steps:
+
+-  In Server Manager, click the ⚠️ yellow triangle at the top.
+→ Select “Promote this server to a domain controller.”
+
+-  Choose Add a new forest (since this is your first DC).
+
+-  In the Root domain name, type: company.local
+
+-  Click Next and create a DSRM password (used for recovery only).
+
+-  Keep default settings for DNS and NetBIOS name.
+
+- Continue clicking Next → Install.
+
+- The server will automatically restart when finished.
+
+ <details> <summary>📸 Click to view  ScreenShot</summary>
+<p align="center">
+  ✅ <strong>Verify Domain configuration</strong> ✅  
+  <br>
+  <img src="https://i.imgur.com/yLpslxV.png" width="60%">
+  </p>
+   
+</details>
