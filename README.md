@@ -63,7 +63,7 @@ Prepare the foundation for a server–client architecture.
 
 ---
 
-### 🔹 Step 4 – Configure Static IP and Rename Server
+### 🔹 Step 2 – Configure Static IP and Rename Server
 **Description:**  
 Give the server a permanent IP address and meaningful hostname.
 
@@ -82,9 +82,9 @@ Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 127.0.0.1
 
 </details> <details> <summary>📸 Click to view  ScreenShots</summary>
 <p align="center">
-  ✅ <strong>Creation Of Domain Controller VM</strong> ✅  
+  ✅ <strong>Verify Settings</strong> ✅  
   <br>
-  <img src="https://i.imgur.com/mv2SFrD.png" width="60%">
+  <img src="https://i.imgur.com/lo5xAKv.png" width="60%">
   </p>
 
 </details>
