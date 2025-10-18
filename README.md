@@ -274,3 +274,33 @@ Enable domain-based logins and centralized policy control.
     
 </details>
      
+### 🔹 Step 8 – Log In as a Domain User
+**Description:**  
+You’ll now verify that your client can log in using the domain user account you created earlier.
+
+🎯 Goal:
+
+Confirm the client successfully authenticates to the domain controller.
+
+🪜 Steps:
+
+On Client01, at the login screen, click Other User.
+
+Enter:
+```
+Username: john.it@company.local
+Password: P@ssw0rd!
+```
+
+Press Enter and wait — the login may take a few moments while Windows creates the new profile.
+
+<details> <summary>📸 Click to view  ScreenShot</summary>
+<p align="center">
+  ✅ <strong>Verify Successful login as john.it on the domain. </strong> ✅  
+<br>
+<img src="https://i.imgur.com/pWcfLZx.png" width="60%">
+</p>
+  
+</details>
+
+
