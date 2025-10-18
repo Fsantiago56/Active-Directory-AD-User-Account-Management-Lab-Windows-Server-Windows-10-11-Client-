@@ -155,3 +155,50 @@ Create and configure a domain named company.local.
   </p>
    
 </details>
+
+### 🔹 Step 5 – Create Organizational Units (OUs) and Users
+**Description:**  
+Organizational Units (OUs) are folders inside Active Directory used to organize users and computers.
+You’ll create a few OUs for different departments and add a test user.
+
+🎯 Goal:
+
+Simulate a company structure and prepare domain accounts for testing.
+
+🪜 Steps :
+
+Open Server Manager → Tools → Active Directory Users and Computers (ADUC).
+
+Right-click your domain → New → Organizational Unit.
+
+Create these OUs:
+
+- IT
+
+- HR
+
+- Sales
+
+Inside each OU, right-click → New → User → create:
+
+```
+- Different Logon for Each Organizational Unit
+
+john.it@company.local
+john.hr@company.local
+john.sales@company.local
+
+- Password for Each User
+
+Password: P@ssw0rd!
+```
+
+
+<details> <summary>📸 Click to view  ScreenShot</summary>
+<p align="center">
+  ✅ <strong>Verify Creation of Organizational Units & Users</strong> ✅  
+  <br>
+  <img src="https://i.imgur.com/PYcc217.png" width="60%">
+  </p>
+   
+</details>
